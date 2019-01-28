@@ -6,7 +6,7 @@ This allows us to embed assets into a binary.
 Possible use cases are embedding html/images for a web server or sprites in a game.
 
 ```
-cat index.html | embedcopy -package assets -function IndexHTML > assets/index.go
+embedcopy -package assets -function IndexHTML <index.html >assets/index.go
 ```
 
 Results in assets/index.go looking something like this:
