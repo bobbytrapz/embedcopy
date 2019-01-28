@@ -2,7 +2,7 @@
 // generates a go package with a function for decompressing and reading the data.
 // This allows us to embed assets into a binary.
 // Possible use cases are embedding html/images for a web server or sprites in a game.
-// ex: cat index.html | embedcopy -package assets -function IndexHTML > assets/index.go
+// ex: embedcopy -package assets -function IndexHTML <index.html >assets/index.go
 package main
 
 import (
@@ -32,7 +32,7 @@ func init() {
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage of embedcopy:\n")
 		flag.PrintDefaults()
-		fmt.Fprintf(os.Stderr, "\n\nExample: cat main.go | embedcopy -package copy -function ReadCopy main.go > copy.go\n")
+		fmt.Fprintf(os.Stderr, "\n\nExample: embedcopy -package copy -function ReadCopy <main.go >copy.go\n")
 	}
 }
 
